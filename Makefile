@@ -2,6 +2,8 @@ SRC = init_cut_string.c init_verif_arg.c init.c main.c solve_big.c solve_manager
 
 OBJ= $(SRC:.c=.o)
 
+LIBFT = -L libft/ -lft
+
 CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
@@ -10,7 +12,7 @@ NAME = push_swap
 
 $(NAME):
 	make -C ./libft
-	$(CC) -o $(NAME) $(FLAGS) $(SRC) libft/*.o
+	$(CC) -o $(NAME) $(FLAGS) $(addprefix src/, $(SRC)) $(LIBFT);
 
 all: $(NAME)
 

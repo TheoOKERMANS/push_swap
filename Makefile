@@ -47,6 +47,9 @@ $(NAME):
 		printf " $$file\n" ; \
 		$(CC) $(FLAGS) -c $$file ; \
 	done
+	@for file in $(OBJ) ; do \
+		mv $$file src ; \
+	done
 	@printf "$(TXT_COMPILING) Compiling program...\n"
 	@printf "$(TXT_BLACK) $(NAME)\n"
 	@$(CC) -o $(NAME) $(FLAGS) $(addprefix src/, $(SRC)) $(LIBFT);
@@ -61,7 +64,7 @@ clean:
 	@printf "$(TXT_BLACK)"
 	@for file in $(OBJ) ; do \
 		printf " $$file\n" ; \
-		rm -f $$file ; \
+		rm -f $(addprefix src/, $$file) ; \
 	done
 	@printf "$(TXT_DONE)DONE\n$(TXT_NC)"
 
@@ -72,7 +75,7 @@ fclean:
 	@printf "$(TXT_BLACK)"
 	@for file in $(OBJ) ; do \
 		printf " $$file\n" ; \
-		rm -f $$file ; \
+		rm -f $(addprefix src/, $$file) ; \
 	done
 	@printf "$(TXT_DELETING) Deleting program\n"
 	@printf "$(TXT_BLACK) $(NAME)\n"

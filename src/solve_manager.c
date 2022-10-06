@@ -6,7 +6,7 @@
 /*   By: tokerman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:55:06 by tokerman          #+#    #+#             */
-/*   Updated: 2022/06/22 14:12:54 by tokerman         ###   ########.fr       */
+/*   Updated: 2022/10/06 09:06:21 by tokerman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	solve_manager(t_stack **stack)
 {
 	size_t	len;
 
+	if (stack_is_solved(*stack))
+		return (0);
 	len = get_len_stack(*stack);
 	if (len <= 5)
 		return (solve_manager_small(stack));

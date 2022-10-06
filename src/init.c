@@ -6,7 +6,7 @@
 /*   By: tokerman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:54:00 by tokerman          #+#    #+#             */
-/*   Updated: 2022/06/22 14:12:48 by tokerman         ###   ########.fr       */
+/*   Updated: 2022/10/06 09:04:03 by tokerman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	init_oder(t_stack *stack)
 		temp1 = temp1->next;
 	}
 }
-
 t_stack	*new_stack(int value)
 {
 	t_stack	*res;

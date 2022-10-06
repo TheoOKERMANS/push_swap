@@ -61,7 +61,7 @@ TXT_NC=\033[0m
 TXT_TITLE=\033[1;35m
 TXT_COMPILING=\033[1;34m
 TXT_DELETING=\033[1;31m
-TXT_DONE=\033[1;32m
+TXT_DONE=\033[0;32m
 #-------------------------
 
 $(NAME):
